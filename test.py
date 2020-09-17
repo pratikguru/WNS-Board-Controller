@@ -1,11 +1,10 @@
 
 """
 The purpose of this script is for controlling servo accutators with a GUI.
-Forward kinematics of an arm can be simulated with this controller software.
 The script uses the serial library for communicating over the serial monitor of the host
 computer.
 @author: Pratik Gurudatt
-@date  : 19/04/2019
+@date  : 17/09/2020
 """
 import copy
 import time
