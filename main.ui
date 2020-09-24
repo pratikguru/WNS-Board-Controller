@@ -35,7 +35,7 @@
       <x>9</x>
       <y>10</y>
       <width>771</width>
-      <height>351</height>
+      <height>371</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -420,7 +420,7 @@
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Page</string>
+      <string>Sensors</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
@@ -428,7 +428,7 @@
         <x>10</x>
         <y>10</y>
         <width>751</width>
-        <height>301</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="widgetResizable">
@@ -440,7 +440,7 @@
          <x>0</x>
          <y>0</y>
          <width>749</width>
-         <height>299</height>
+         <height>319</height>
         </rect>
        </property>
        <widget class="QGroupBox" name="groupBox">
@@ -449,7 +449,7 @@
           <x>10</x>
           <y>10</y>
           <width>341</width>
-          <height>281</height>
+          <height>301</height>
          </rect>
         </property>
         <property name="title">
@@ -631,7 +631,7 @@
           <x>370</x>
           <y>140</y>
           <width>361</width>
-          <height>151</height>
+          <height>171</height>
          </rect>
         </property>
         <property name="title">
@@ -724,9 +724,9 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>370</y>
+      <y>380</y>
       <width>771</width>
-      <height>171</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="frameShadow">
@@ -749,7 +749,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>550</y>
+      <y>580</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -765,7 +765,7 @@
      <x>0</x>
      <y>0</y>
      <width>792</width>
-     <height>22</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFIle">
