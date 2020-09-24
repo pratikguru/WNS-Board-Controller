@@ -6,21 +6,36 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>595</height>
+    <width>792</width>
+    <height>646</height>
    </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>792</width>
+    <height>646</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>792</width>
+    <height>646</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Timing Controller</string>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>9</x>
-      <y>9</y>
+      <y>10</y>
       <width>771</width>
-      <height>321</height>
+      <height>351</height>
      </rect>
     </property>
     <property name="currentIndex">
@@ -67,32 +82,6 @@
       </property>
       <property name="text">
        <string>Connect</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Status:</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_6">
-      <property name="geometry">
-       <rect>
-        <x>60</x>
-        <y>160</y>
-        <width>51</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>OK </string>
       </property>
      </widget>
      <widget class="QComboBox" name="comboBox">
@@ -216,37 +205,6 @@
       <string>Stepper Control</string>
      </attribute>
     </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>Solenoid Control</string>
-     </attribute>
-     <widget class="QPushButton" name="pushButton_5">
-      <property name="geometry">
-       <rect>
-        <x>50</x>
-        <y>60</y>
-        <width>221</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Open</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_6">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>60</y>
-        <width>221</width>
-        <height>151</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Close</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="tab_5">
      <attribute name="title">
       <string>Relay Control</string>
@@ -261,7 +219,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 1</string>
+       <string>Relay 1 ON</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_8">
@@ -274,7 +232,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 2</string>
+       <string>Relay 2 ON</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_10">
@@ -287,7 +245,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 3</string>
+       <string>Relay 3 ON</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_11">
@@ -300,7 +258,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 4</string>
+       <string>Relay 4 ON</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_12">
@@ -313,7 +271,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 5</string>
+       <string>Relay 1 OFF</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_13">
@@ -326,7 +284,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 7</string>
+       <string>Relay 3 OFF</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_14">
@@ -339,7 +297,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 6</string>
+       <string>Relay 2 OFF</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_15">
@@ -352,8 +310,413 @@
        </rect>
       </property>
       <property name="text">
-       <string>Relay 8</string>
+       <string>Relay 4 OFF</string>
       </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_9">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>40</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 5 ON</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_16">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>190</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 8 OFF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_17">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>140</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 7 ON</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_18">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>90</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 6 ON</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_19">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>40</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 5 OFF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_20">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>190</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 8 ON</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_21">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>140</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 7 OFF</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_22">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>90</y>
+        <width>151</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Relay 6 OFF</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Page</string>
+     </attribute>
+     <widget class="QScrollArea" name="scrollArea">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>751</width>
+        <height>301</height>
+       </rect>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>749</width>
+         <height>299</height>
+        </rect>
+       </property>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>341</width>
+          <height>281</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Category 1</string>
+        </property>
+        <widget class="QPushButton" name="pushButton_5">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>30</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 1 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_6">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>30</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 2 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_23">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>70</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 3 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_24">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>70</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 4 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_25">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>110</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 5 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_26">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>110</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 6 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_27">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>150</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 7 | Magnetic</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_28">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>150</y>
+           <width>151</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 8 | Magnetic</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_2">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>10</y>
+          <width>361</width>
+          <height>121</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Category 2</string>
+        </property>
+        <widget class="QPushButton" name="pushButton_29">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 1 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_30">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>30</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 2 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_31">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 3 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_32">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>70</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 4 | Ultrasound</string>
+         </property>
+        </widget>
+       </widget>
+       <widget class="QGroupBox" name="groupBox_3">
+        <property name="geometry">
+         <rect>
+          <x>370</x>
+          <y>140</y>
+          <width>361</width>
+          <height>151</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Category 3</string>
+        </property>
+        <widget class="QPushButton" name="pushButton_36">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>30</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 2 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_35">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>70</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 3 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_33">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>30</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 1 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_34">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>70</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 4 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_37">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 5 | Ultrasound</string>
+         </property>
+        </widget>
+        <widget class="QPushButton" name="pushButton_38">
+         <property name="geometry">
+          <rect>
+           <x>180</x>
+           <y>110</y>
+           <width>171</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Sensor 6 | Ultrasound</string>
+         </property>
+        </widget>
+       </widget>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -361,7 +724,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>340</y>
+      <y>370</y>
       <width>771</width>
       <height>171</height>
      </rect>
@@ -378,12 +741,15 @@
     <property name="resizeMode">
      <enum>QListView::Adjust</enum>
     </property>
+    <property name="uniformItemSizes">
+     <bool>true</bool>
+    </property>
    </widget>
    <widget class="QRadioButton" name="radioButton">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>520</y>
+      <y>550</y>
       <width>100</width>
       <height>20</height>
      </rect>
@@ -398,7 +764,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>792</width>
      <height>22</height>
     </rect>
    </property>
