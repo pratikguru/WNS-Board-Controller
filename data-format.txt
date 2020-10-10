@@ -1,0 +1,149 @@
+Water Management: Sensing and Actuation Guide
+==========================================================================
+
+Contents:
+	*	Command Syntax
+		-	Read sensor
+		-	Actuate device
+	*	Sensor Types
+	*	Actuator Types
+	* 	Sensor IDs
+		-	Tank Ball Sensor
+		-	Depth Sensor
+		-	Flow sensor
+	*	Actuator IDs
+		-	Relays
+	*	Response
+		-	Syntax
+		-	Response Codes
+		-	Error Codes
+
+
+COMMAND SYNTAX:
+---------------
+
+1. Read sensor:
+   -----------
+		(0xEA)(0xAD)(SensorID)(SensorType)
+Example: EA AD 4D 97
+Read(Read command : 0xEAAD) Tank Ball sensor(SensorType:0x97) whose sensor ID is 0x4D
+   
+2. Actuate device:
+   --------------
+Type 1 (Relay): 
+(0xAC)(0xAE)(ActuatorID)(ActuatorType)(Value)
+Example: ACAE 3A A1 01
+Actuate(Actuate command : 0xACAE) Relay(ActuatorType:0xA1) whose actuator ID is 0x3A. Turn it ON (Value: 0x01)
+
+Type 2 (Motor/Valve):
+(0xAC)(0xAE)(ActuatorID)(ActuatorType)(Mode)(Direction)(Pulse)(No. of Rotations in Degrees)
+Example 1: ACAE51A201
+Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Open Valve (Value: 0x01)
+Example 2: ACAE 51 A2 02
+Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Close Valve (Value: 0x02)
+Example 3: ACAE51A2030005D002
+Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Rotate to Degree (Value: 0x03) Direction:Clockwise (0x00) PulseDelay: 5ms (0x05) Degrees:720 (0x02D0)
+Example 4: ACAE51A20301056801
+Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Rotate to Degree (Value: 0x03) Direction:CounterClockwise (0x01) PulseDelay: 5ms (0x05)  Degrees:360 (0x0168)
+
+
+
+SENSOR TYPES:
+-------------
+-	Tank Ball (Magnetic) 	151		0x97
+-	Depth (Ultrasonic)	 	152		0x98
+-	Flow (Hall effect)		153		0x99
+
+ACTUATOR TYPES:
+---------------
+-	Relays					161		0xA1
+-	Motor/Valve				162		0xA2
+
+
+SENSOR IDs
+----------
+A.	Tank Ball sensors (Magnetic sensor)(0x97)
+--------|-----------|--------------
+Sl.No.	|  Decimal	|	Hexadecimal
+--------|-----------|--------------
+1		|	71		|	0x47
+2		|	72		|	0x48
+3		|	73		|	0x49
+4		|	74		|	0x4A
+5		|	75		|	0x4B
+6		|	76		|	0x4C
+7		|	77		|	0x4D
+
+B.	Depth Sensors (Ultrasonic sensor)(0x98)
+--------|-----------|--------------
+Sl.No.	|  Decimal	|	Hexadecimal
+--------|-----------|--------------
+1		|	33		|	0x21
+2		|	34		|	0x22
+3		|	35		|	0x23
+4		|	36		|	0x24
+
+
+C.	Flow sensors (Hall effect sensor)(0x99)
+--------|-----------|--------------
+Sl.No.	|  Decimal	|	Hexadecimal
+--------|-----------|--------------
+1		|	61		|	0x3D
+2		|	62		|	0x3E
+3		|	63		|	0x3F
+4		|	64		|	0x40
+5		|	65		|	0x41
+
+Actuator IDs(0xA1)
+------------
+A.	Relays 
+--------|-----------|--------------
+Sl.No.	|  Decimal	|	Hexadecimal
+--------|-----------|--------------
+1		|	51		|	0x33
+2		|	52		|	0x34
+3		|	53		|	0x35
+4		|	54		|	0x36
+5		|	55		|	0x37
+6		|	56		|	0x38
+7		|	57		|	0x39
+8		|	58		|	0x3A
+
+B. Motor/Valve(0xA2)
+--------|-----------|--------------
+Sl.No.	|  Decimal	|	Hexadecimal
+--------|-----------|--------------
+1		|	81		|	0x51
+
+Modes for Motor/Valve:
+0x01 - Open
+0x02 - Close
+0x03 - Rotate a certain degree.
+
+
+RESPONSE:
+---------
+
+Syntax:
+----------------
+[Response Code][Value/ErrorCode]
+
+Response Codes:
+---------------
+SUCCESS 				201		0xC9	
+FAILURE 				202		0xCA
+
+Error Codes:
+------------
+
+senseError 				101     0x65
+ActuationError 			102     0x66
+invalidCommand 			103     0x67
+invalidType 			104     0x68
+IDforTypeNotFound 		105  	0x69
+
+Examples: 
+1. C903
+Command Successful(0xC9), sensor Value is 03
+2. CA68
+Command Failed(0xCA), Invalid Type(0x68)

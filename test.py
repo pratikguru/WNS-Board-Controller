@@ -13,6 +13,9 @@ import serial
 import json
 import glob
 import serial.tools.list_ports
+from Models.Routing import (HardwareSetup) 
+
+
 try:
     from   PyQt5           import QtCore
     from   PyQt5.QtCore    import pyqtSlot
@@ -35,7 +38,7 @@ class App(QMainWindow):
             print ("main.ui could not be found!")
         self.serialObj: serial      = serial.Serial()
         self.serialPortList: list = []
-
+        
         self.currentState = False
 
         ports = (serial.tools.list_ports.comports())
@@ -58,7 +61,7 @@ class App(QMainWindow):
         self.dial.valueChanged.connect(self.handleDialChange)
         self.radioButton.toggled.connect(self.handleRadioButtonChange)
 
-
+    
     def handleRadioButtonChange(self):
       print (self.radioButton.isChecked())
 
