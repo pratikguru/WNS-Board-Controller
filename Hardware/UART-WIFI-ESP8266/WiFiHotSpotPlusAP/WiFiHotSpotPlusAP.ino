@@ -5,15 +5,16 @@
 #include <WiFiClient.h>
 #include <ESP8266mDNS.h>
 #include <ESP8266WebServer.h>
+#include <ESP8266HTTPClient.h>
 
 ESP8266WebServer server(80);
-
 IPAddress local_IP(10, 0, 0, 1);
 IPAddress gateway(10, 0, 0, 1);
 IPAddress subnet(255, 255, 255, 0);
 IPAddress dns(8, 8, 8, 8);
-const char* deviceName = "raghavendraEncrypt.ooo";
+#define POST_URL "http://wnsserver.wmswns.com/WNSRestServices/rest/insertFiledData1/masterRasp2/"
 
+const char* deviceName = "raghavendraEncrypt.ooo";
 // REPLACE WITH YOUR NETWORK CREDENTIALS
 const char* ssid = "ENCRYPTION_SSID";
 const char* password = "gurudatt123456";
@@ -136,10 +137,10 @@ int connectWifi(const char* ssid, const char* password) {
     }
     
   }  
-  Serial.println();
-  Serial.println("Connected to gateway");
-  Serial.print("IP : ");
-  Serial.println(WiFi.localIP());
+//  Serial.println();
+//  Serial.println("Connected to gateway");
+//  Serial.print("IP : ");
+//  Serial.println(WiFi.localIP());
   return 1;
 }
 
@@ -153,9 +154,7 @@ void setWiFi(const char* Name)
     Serial.print(".");
     delay(200);
   }
-  Serial.println("WIFI < " + String(Name) + " > ... Started");
-  Serial.println(WiFi.softAPIP());
-  Serial.println("Server Started");
+  
 }
 
 
@@ -168,8 +167,7 @@ void blink(){
 
 void handleNewConnectionCredentials(){
   if(server.hasArg("input1") && server.hasArg("input2")) {
-    Serial.println("SSID: "  + String(server.arg("input1")));
-    Serial.println("PASSWORD: " + String(server.arg("input2")));
+    
     
     if(connectWifi(server.arg("input1").c_str(), server.arg("input2").c_str())) { 
       server.send(200, "text/html", "connection OK!... <br><a href=\"/\">Return to Home Page</a>");
@@ -192,21 +190,43 @@ void handleRoot() {
 }
 
 
+void disconnectWiFi(){
+  Serial.println("Disconnecting Wifi");
+  WiFi.disconnect();
+  if(WiFi.status() != WL_CONNECTED){
+    Serial.println("Disconnection success");
+    CLIENT_MODE = false;
+    server.send(200);
+  }
+}
+
+
+
+/*
+ * 
+ * boardID : {
+ *  pinID : pinvalue, x16 
+ * }
+ * 
+ * 
+ */
+
 void setup() {
   Serial.begin(9600);
   pinMode(BUILTIN_LED, OUTPUT);
   digitalWrite(BUILTIN_LED, HIGH);
   if(WiFi.reconnect()){
     CLIENT_MODE = true;
-    Serial.println("Fetched old connection data");
+    
   }
   else{
     CLIENT_MODE=false;
-    Serial.println("Couldn't fetch old connection data");
+    
   }
   setWiFi("ESP AP");
   server.on("/", HTTP_GET, handleRoot);
   server.on("/get", HTTP_GET, handleNewConnectionCredentials);
+  server.on("/disconnect", HTTP_GET, disconnectWiFi);
   server.begin();
 }
 
@@ -225,10 +245,22 @@ void loop() {
       digitalWrite(BUILTIN_LED, HIGH);
       delay(200);
       String incoming_data = Serial.readStringUntil('\n');
-      Serial.println("Incoming: " + String(incoming_data));
-      delay(10);
+      Serial.println(incoming_data);
+      String packet = "{\"hello\":\"world\"}";
+      delay(10);  
       if(CLIENT_MODE){
-        Serial.println("Client mode ok");
+        if(WiFi.status() == WL_CONNECTED) {
+          HTTPClient httpClient; 
+          httpClient.begin(POST_URL);
+          httpClient.addHeader("Content-Type", "application/json");
+          httpClient.addHeader("Content-Length", (String)(packet).length());
+          int response = httpClient.POST(packet);
+          Serial.print("Response: " );
+          Serial.println(response);
+        }
+        else {
+          Serial.println("Connection Error");
+        }
       }
       else {
         Serial.println("Not operating in client mode");

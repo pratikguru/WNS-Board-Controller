@@ -1,4 +1,4 @@
-from .Sensing import Sensor, Actuator
+from Sensing import Sensor, Actuator
 import serial
 
 class HardwareSetup:
@@ -38,7 +38,7 @@ if __name__ == "__main__":
 
   obj          = serial.Serial()
   obj.baudrate = 9600
-  obj.port     = "/dev/cu.usbmodem14101"
+  obj.port     = "/dev/cu.usbmodem14201"
   obj.open()
   obj.timeout = 3
 

@@ -26,7 +26,7 @@ COMMAND SYNTAX:
 1. Read sensor:
    -----------
 		(0xEA)(0xAD)(SensorID)(SensorType)
-Example: EA AD 4D 97
+Example: EA AD 4D 97 0x00
 Read(Read command : 0xEAAD) Tank Ball sensor(SensorType:0x97) whose sensor ID is 0x4D
    
 2. Actuate device:
