@@ -1,5 +1,9 @@
-from Sensing import Sensor, Actuator
+try: 
+  from .Sensing import Sensor, Actuator
+except:
+  from Sensing import Sensor, Actuator
 import serial
+import time
 
 class HardwareSetup:
     def __init__(self):
@@ -32,17 +36,13 @@ if __name__ == "__main__":
   HWS = HardwareSetup()
   
   tank_ball_1 = HWS.getNewSensor()
-
-
-
-
   obj          = serial.Serial()
   obj.baudrate = 9600
-  obj.port     = "/dev/cu.usbmodem14201"
+  obj.port     = "/dev/cu.usbmodem14101"
   obj.open()
-  obj.timeout = 3
+  obj.timeout = 4
 
-  obj.readline()
+  #obj.readline()
   # Fetch sensor reading.
   
   incoming = obj.write(tank_ball_1.returnSensorReadingFrame(0x47, "TANK_BALL"))

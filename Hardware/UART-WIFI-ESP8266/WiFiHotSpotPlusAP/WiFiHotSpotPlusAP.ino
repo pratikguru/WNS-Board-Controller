@@ -202,14 +202,6 @@ void disconnectWiFi(){
 
 
 
-/*
- * 
- * boardID : {
- *  pinID : pinvalue, x16 
- * }
- * 
- * 
- */
 
 void setup() {
   Serial.begin(9600);

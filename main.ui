@@ -39,7 +39,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -418,9 +418,40 @@
       </property>
      </widget>
     </widget>
+    <widget class="QWidget" name="tab_6">
+     <attribute name="title">
+      <string>Valve Control</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_39">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Open Valve</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_40">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>50</y>
+        <width>211</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Close Valve</string>
+      </property>
+     </widget>
+    </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Page</string>
+      <string>Sensors</string>
      </attribute>
      <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
@@ -647,7 +678,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Sensor 2 | Ultrasound</string>
+          <string>Sensor 2 | Flow</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_35">
@@ -660,7 +691,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Sensor 3 | Ultrasound</string>
+          <string>Sensor 3 | Flow</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_33">
@@ -673,7 +704,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Sensor 1 | Ultrasound</string>
+          <string>Sensor 1 | Flow</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_34">
@@ -686,7 +717,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Sensor 4 | Ultrasound</string>
+          <string>Sensor 4 | Flow</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_37">
@@ -699,7 +730,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Sensor 5 | Ultrasound</string>
+          <string>Sensor 5 | Flow</string>
          </property>
         </widget>
         <widget class="QPushButton" name="pushButton_38">
@@ -712,7 +743,7 @@
           </rect>
          </property>
          <property name="text">
-          <string>Sensor 6 | Ultrasound</string>
+          <string>Sensor 6 | Flow</string>
          </property>
         </widget>
        </widget>
@@ -726,7 +757,7 @@
       <x>10</x>
       <y>370</y>
       <width>771</width>
-      <height>171</height>
+      <height>201</height>
      </rect>
     </property>
     <property name="frameShadow">
@@ -749,7 +780,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>550</y>
+      <y>570</y>
       <width>100</width>
       <height>20</height>
      </rect>

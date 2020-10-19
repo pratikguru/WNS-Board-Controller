@@ -38,10 +38,13 @@ Actuate(Actuate command : 0xACAE) Relay(ActuatorType:0xA1) whose actuator ID is 
 
 Type 2 (Motor/Valve):
 (0xAC)(0xAE)(ActuatorID)(ActuatorType)(Mode)(Direction)(Pulse)(No. of Rotations in Degrees)
-Example 1: ACAE51A201
+
+Example 1: AC AE 51 A2 01
 Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Open Valve (Value: 0x01)
 Example 2: ACAE 51 A2 02
 Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Close Valve (Value: 0x02)
+
+
 Example 3: ACAE51A2030005D002
 Actuate(Actuate command : 0xACAE) Motor/Valve(ActuatorType:0xA2) whose actuator ID is 0x51. Mode:Rotate to Degree (Value: 0x03) Direction:Clockwise (0x00) PulseDelay: 5ms (0x05) Degrees:720 (0x02D0)
 Example 4: ACAE51A20301056801
